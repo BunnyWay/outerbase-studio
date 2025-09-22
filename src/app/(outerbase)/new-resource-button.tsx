@@ -75,8 +75,6 @@ export default function NewResourceType({
   const [search, setSearch] = useState("");
   const [open, setOpen] = useState(false);
 
-  const cloudflare = resourceTypeList.filter((resource) => resource.cloudflare);
-
   const allResourceType = (
     <>
       <div className="flex gap-4 p-2">
@@ -103,20 +101,6 @@ export default function NewResourceType({
             <CreateResourceItem key={resource.name} data={resource} />
           ))}
       </div>
-
-      {cloudflare.length > 0 && (
-        <>
-          <div className="text-muted-foreground mt-4 border-t-4 p-4 text-sm font-semibold tracking-wider">
-            CLOUDFLARE
-          </div>
-
-          <div className="mb-2 grid grid-cols-2 gap-2 px-2">
-            {cloudflare.map((resource) => (
-              <CreateResourceItem key={resource.name} data={resource} />
-            ))}
-          </div>
-        </>
-      )}
     </>
   );
 

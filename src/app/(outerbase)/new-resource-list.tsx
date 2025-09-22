@@ -4,7 +4,6 @@ import {
   SQLiteIcon,
 } from "@/components/icons/outerbase-icon";
 import {
-  CloudflareIcon,
   RQLiteIcon,
   StarbaseIcon,
   TursoIcon,
@@ -16,27 +15,6 @@ export function getCreateResourceTypeList(
   workspaceId?: string
 ): NewResourceType[] {
   return [
-    {
-      name: "Cloudflare D1",
-      icon: CloudflareIcon,
-      href: workspaceId ? "" : "/local/new-base/cloudflare-d1",
-      colorClassName: "text-orange-500",
-      cloudflare: true,
-    },
-    {
-      name: "Durable Object",
-      icon: CloudflareIcon,
-      href: workspaceId ? "" : "/local/new-base/durable-object",
-      colorClassName: "text-orange-500",
-      cloudflare: true,
-    },
-    {
-      name: "Worker Analytics Engine",
-      icon: CloudflareIcon,
-      colorClassName: "text-orange-500",
-      href: workspaceId ? "" : "/local/new-base/cloudflare-wae",
-      cloudflare: true,
-    },
     {
       name: "StarbaseDB",
       icon: StarbaseIcon,
