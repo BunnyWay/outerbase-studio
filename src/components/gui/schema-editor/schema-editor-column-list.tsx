@@ -187,7 +187,7 @@ function ColumnItem({
   if (value.new === null) {
     highlightClassName = "bg-red-400 dark:bg-red-800";
   } else if (value.old === null) {
-    highlightClassName = "bg-green-500 dark:bg-green-800";
+    highlightClassName = "bg-green-500";
   } else if (checkSchemaColumnChange(value)) {
     highlightClassName = "bg-yellow-400";
   }

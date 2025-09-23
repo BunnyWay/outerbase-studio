@@ -111,7 +111,7 @@ export default function SchemaView() {
           {activatorButton}
         </div>
 
-        <div className="flex h-[32px] w-full cursor-text items-center overflow-hidden rounded-md bg-white px-3 py-2.5 text-base text-neutral-900 outline outline-1 outline-neutral-200 focus:outline-neutral-400/70 disabled:cursor-not-allowed disabled:opacity-50 has-focus:outline-neutral-400/70 has-enabled:active:outline-neutral-400/70 has-disabled:cursor-not-allowed has-disabled:opacity-50 dark:bg-neutral-900 dark:text-white dark:outline-neutral-800 dark:focus:outline-neutral-600 dark:has-focus:outline-neutral-600 dark:has-enabled:active:outline-neutral-600">
+        <div className="flex h-[32px] w-full cursor-text items-center overflow-hidden rounded-md bg-white px-3 py-2.5 text-base text-neutral-900 outline outline-1 outline-neutral-200 focus:outline-neutral-400/70 disabled:cursor-not-allowed disabled:opacity-50 has-focus:outline-neutral-400/70 has-enabled:active:outline-neutral-400/70 has-disabled:cursor-not-allowed has-disabled:opacity-50 bn-bg-dark-2 dark:text-white dark:outline-neutral-800 dark:focus:outline-neutral-600 dark:has-focus:outline-neutral-600 dark:has-enabled:active:outline-neutral-600">
           <div className="flex h-full items-center text-sm">
             <LucideSearch
               className="text-neutral-500"

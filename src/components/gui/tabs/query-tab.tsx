@@ -28,9 +28,9 @@ import {
 import { escapeSqlValue, extractInputValue } from "@/drivers/sqlite/sql-helper";
 import { KEY_BINDING } from "@/lib/key-matcher";
 import {
-  multipleQuery,
   MultipleQueryProgress,
   MultipleQueryResult,
+  multipleQuery,
 } from "@/lib/sql/multiple-query";
 import { sendAnalyticEvents } from "@/lib/tracking";
 import { cn } from "@/lib/utils";
@@ -54,7 +54,7 @@ import {
 } from "../sql-editor/statement-highlight";
 import ExplainResultTab from "../tabs-result/explain-result-tab";
 import QueryResult from "../tabs-result/query-result-tab";
-import WindowTabs, { useTabsContext, WindowTabItemProps } from "../windows-tab";
+import WindowTabs, { WindowTabItemProps, useTabsContext } from "../windows-tab";
 import { QueryPlaceholder } from "./query-placeholder";
 
 interface QueryWindowProps {
@@ -342,7 +342,7 @@ export default function QueryWindow({
     <ResizablePanelGroup direction="vertical">
       <ResizablePanel style={{ position: "relative" }}>
         <div className="absolute top-0 right-0 bottom-0 left-0 flex flex-col">
-          <div className="flex border-b bg-neutral-50 py-3 pr-1 pl-3 dark:bg-neutral-950">
+          <div className="flex border-b bg-neutral-50 py-3 pr-1 pl-3 dark-bn-bg-secondary">
             <div className="text-secondary-foreground flex shrink-0 items-center p-1 text-sm">
               {namespaceName} /
             </div>
