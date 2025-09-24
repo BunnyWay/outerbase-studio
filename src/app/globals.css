@@ -1,11 +1,13 @@
 @import "tailwindcss";
 @import "./styles/markdown.css";
+@import "./bunny-colors.css";
 
 @custom-variant dark (&:is(.dark *));
 @custom-variant interactive (&:where(.interactive, .interactive *));
 @custom-variant toggle (&:where(.toggle, .toggle *));
 @custom-variant square (&:where(.square, .square *));
 @custom-variant circular (&:where(.circular, .circular *));
+
 
 @theme {
   --font-*: initial;
@@ -245,32 +247,32 @@
 
 @layer base {
   :root {
-    --background: #fff;
+    --background: var(--color-white);
     --foreground: #444;
 
-    --color-surface: #fff;
+    --color-surface: var(--color-white);
     --color-surface-hover: #eee;
 
-    --card: #fff;
-    --card-foreground: #444;
+    --card: var(--color-white);;
+    --card-foreground: var(--color-dark-7);
 
-    --popover: #fff;
-    --popover-foreground: #444;
+    --popover: var(--color-white);;
+    --popover-foreground: var(--color-dark-7);
 
-    --primary: black;
-    --primary-foreground: white;
+    --primary: var(--color-blue-6);
+    --primary-foreground:var(--color-white);
 
     --secondary: #f5f5f5;
-    --secondary-foreground: #444;
+    --secondary-foreground: var(--color-dark-7);
 
     --muted: #eee;
     --muted-foreground: #888;
 
     --accent: #f1f5f9;
-    --accent-foreground: #444;
+    --accent-foreground: var(--color-dark-7);
 
     --destructive: #f1f5f9;
-    --destructive-foreground: red;
+    --destructive-foreground: var(--color-red-6);
 
     --border: #e5e5e5;
     --input: #e2e8f0;
@@ -281,10 +283,18 @@
     --selected: #e2e8f0;
     --scroll-bar: #d4d4d4;
     --scroll-bar-hover: #ccc;
+    
+
+    --color-red-500: var(--color-red-6);
+
+    --color-green-200: var(--color-green-2);
+    --color-green-500: var(--color-green-5);
+    --color-green-600: var(--color-green-6);
+    --color-green-800: var(--color-green-8);
   }
 
   .dark {
-    --background: #0a0a0a;
+    --background: var(--color-bg);
     --foreground: #aaa;
 
     --color-surface: black;
@@ -293,25 +303,25 @@
     --card: #222;
     --card-foreground: #eee;
 
-    --popover: #111;
+    --popover: var(--color-dark-2);
     --popover-foreground: #eee;
 
     --primary: white;
     --primary-foreground: black;
 
-    --secondary: #171717;
+    --secondary: var(--color-base);
     --secondary-foreground: #eee;
 
     --muted: #333;
     --muted-foreground: #888;
 
-    --accent: #2a2d2e;
+    --accent: var(--color-bg);
     --accent-foreground: #eee;
 
     --destructive: red;
     --destructive-foreground: white;
 
-    --border: #262626;
+    --border: #2e313a;
     --input: #333;
     --ring: #444;
 
@@ -933,4 +943,51 @@
   to {
     transform: rotate(360deg) scale(0.9);
   }
+}
+
+/*  BUNNY OVERRIDES  */
+
+.text-primary {
+  color: var(--color-bunny-dark);
+}
+
+.bn-bg-main {
+  background-color: var(--color-bg);
+}
+
+.bn-btn-secondary {
+  background-color: var(--color-blue-6);
+
+  &:hover {
+    background-color: var(--color-blue-7);
+  }
+}
+
+.bn-bg-dark-2 {
+  background: var(--color-dark-2);
+}
+
+.dark {
+  .bn-bg-main, .dark-bn-bg-main {
+    background-color: var(--color-base);
+  }
+
+  .bn-bg-secondary, .dark-bn-bg-secondary {
+    background-color: var(--color-bg);
+  }
+
+  .bn-btn-secondary {
+    background-color: var(--color-dark-4);
+    color: var(--color-white);
+  
+    &:hover {
+      background-color: var(--color-dark-5);
+      color: var(--color-white);
+    }
+  }
+
+  .dark-bn-bg-dark-2 {
+    background: var(--color-dark-2);
+  }
+
 }

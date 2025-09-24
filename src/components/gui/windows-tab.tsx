@@ -1,20 +1,20 @@
 import { restrictToHorizontalAxis } from "@/lib/dnd-kit";
 import {
-  closestCenter,
   DndContext,
-  type DragEndEvent,
   KeyboardSensor,
   PointerSensor,
+  closestCenter,
   useSensor,
   useSensors,
+  type DragEndEvent,
 } from "@dnd-kit/core";
 import {
+  SortableContext,
   arrayMove,
   horizontalListSortingStrategy,
-  SortableContext,
   sortableKeyboardCoordinates,
 } from "@dnd-kit/sortable";
-import { type LucideIcon, LucidePlus } from "lucide-react";
+import { LucidePlus, type LucideIcon } from "lucide-react";
 import {
   createContext,
   useCallback,
@@ -195,7 +195,7 @@ export default function WindowTabs({
         modifiers={[restrictToHorizontalAxis]}
       >
         <div className="flex h-full w-full flex-col">
-          <div className="no-scrollbar shrink-0 grow-0 overflow-x-auto bg-neutral-100 dark:bg-neutral-900">
+          <div className="no-scrollbar shrink-0 grow-0 overflow-x-auto bn-bg-main dark-bn-bg-secondary">
             <div
               className="window-tab-scrollbar flex h-[40px]"
               ref={tabContainerRef}
@@ -239,11 +239,11 @@ export default function WindowTabs({
                 <div
                   ref={tabMenuRef}
                   style={{ zIndex: 50, position: "sticky" }}
-                  className={`right-0 flex h-[40px] items-center border-b bg-neutral-100 dark:bg-neutral-900`}
+                  className={`right-0 flex h-[40px] items-center border-b bn-bg-main`}
                 >
                   <DropdownMenu modal={false}>
                     <DropdownMenuTrigger>
-                      <div className="ml-1.5 flex h-7 items-center justify-center gap-1 rounded-lg p-1.5 py-2 text-sm text-neutral-600 transition hover:bg-neutral-200 hover:text-black dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-white">
+                      <div className="ml-1.5 mr-2 flex h-7 items-center justify-center gap-1 rounded-lg p-1.5 py-2 text-sm text-neutral-600 transition hover:bg-neutral-200 hover:text-black dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-white">
                         <LucidePlus className="h-4 w-4" /> New
                       </div>
                     </DropdownMenuTrigger>
@@ -263,7 +263,7 @@ export default function WindowTabs({
                 </div>
               )}
 
-              <div className="flex h-[40px] flex-1 border-b"></div>
+              <div className="flex h-[40px] flex-1 border-b dark-bn-bg-secondary"></div>
             </div>
           </div>
           <div className="relative grow">

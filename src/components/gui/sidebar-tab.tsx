@@ -43,9 +43,9 @@ export default function SidebarTab({ tabs }: Readonly<SidebarTabProps>) {
   const config = useStudioContext();
 
   return (
-    <div className={cn("flex h-full bg-neutral-50 dark:bg-neutral-950")}>
+    <div className={cn("flex h-full bn-bg-main")}>
       <div className={cn("shrink-0")}>
-        <div className="flex h-full flex-col gap-4 border-r border-neutral-200 p-3 dark:border-neutral-800">
+        <div className="flex h-full flex-col gap-4 border-r border-neutral-200 p-3 dark:border-neutral-700">
           <DropdownMenu modal={false}>
             <DropdownMenuTrigger>
               <div className="mb-2 ml-1 flex h-8 w-8 items-center justify-center">
@@ -135,7 +135,7 @@ export default function SidebarTab({ tabs }: Readonly<SidebarTabProps>) {
                     className={cn(
                       "cursor flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-0.5 text-neutral-400 hover:text-neutral-900 dark:text-neutral-600 dark:hover:text-neutral-100",
                       selectedIndex === idx
-                        ? "rounded-xl bg-neutral-200 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-100"
+                        ? "rounded-xl bg-neutral-200 text-neutral-900 dark-bn-bg-secondary dark:text-neutral-100"
                         : undefined
                     )}
                   >
