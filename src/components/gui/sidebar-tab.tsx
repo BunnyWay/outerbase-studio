@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { useSearchParams } from "next/navigation";
 import { ReactElement, useState } from "react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
@@ -24,7 +23,7 @@ export default function SidebarTab({ tabs }: Readonly<SidebarTabProps>) {
     return a;
   });
 
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
   // const disableToggle =
   //   searchParams.get("disableThemeToggle") === "1" || forcedTheme;
 
