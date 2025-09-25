@@ -1,19 +1,8 @@
 import { useStudioContext } from "@/context/driver-provider";
 import { cn } from "@/lib/utils";
-import { ArrowLeft } from "@phosphor-icons/react";
 import { useTheme } from "next-themes";
-import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { ReactElement, useState } from "react";
-import ThemeToggle from "../theme-toggle";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 export interface SidebarTabItem {
   key: string;
@@ -44,7 +33,7 @@ export default function SidebarTab({ tabs }: Readonly<SidebarTabProps>) {
 
   return (
     <div className={cn("flex h-full bn-bg-main")}>
-      <div className={cn("shrink-0")}>
+      {/* <div className={cn("shrink-0")}>
         <div className="flex h-full flex-col gap-4 border-r border-neutral-200 p-3 dark:border-neutral-700">
           <DropdownMenu modal={false}>
             <DropdownMenuTrigger>
@@ -147,7 +136,7 @@ export default function SidebarTab({ tabs }: Readonly<SidebarTabProps>) {
             );
           })}
         </div>
-      </div>
+      </div> */}
 
       <div className="relative flex h-full grow overflow-hidden">
         {tabs
