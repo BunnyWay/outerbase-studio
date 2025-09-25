@@ -27,7 +27,7 @@ import SavedDocTab from "./sidebar/saved-doc-tab";
 export default function DatabaseGui() {
   const DEFAULT_WIDTH = 250;
 
-  const [defaultWidthPercentage, setDefaultWidthPercentage] = useState(15);
+  const [defaultWidthPercentage, setDefaultWidthPercentage] = useState(20);
 
   useEffect(() => {
     setDefaultWidthPercentage((DEFAULT_WIDTH / window.innerWidth) * 100);
