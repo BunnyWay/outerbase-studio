@@ -375,7 +375,7 @@ export default function QueryWindow({
                 />
               )}
 
-              <div className="flex">
+              <div className="flex mr-9">
                 <button
                   onClick={() => onRunClicked()}
                   className={cn(

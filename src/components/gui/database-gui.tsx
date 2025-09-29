@@ -25,9 +25,9 @@ import { Binoculars, GearSix, Table } from "@phosphor-icons/react";
 import SavedDocTab from "./sidebar/saved-doc-tab";
 
 export default function DatabaseGui() {
-  const DEFAULT_WIDTH = 300;
+  const DEFAULT_WIDTH = 250;
 
-  const [defaultWidthPercentage, setDefaultWidthPercentage] = useState(25);
+  const [defaultWidthPercentage, setDefaultWidthPercentage] = useState(20);
 
   useEffect(() => {
     setDefaultWidthPercentage((DEFAULT_WIDTH / window.innerWidth) * 100);
