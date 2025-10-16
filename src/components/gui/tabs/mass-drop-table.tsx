@@ -44,10 +44,7 @@ function ConfirmDialog({
               </div>
             ))}
           </div>
-          <p className="text-primary my-2 mt-8 font-serif text-2xl">
-            ln(x) + e<sup>x-1</sup> - cos(x) = 0
-          </p>
-          <p className="my-2">Solve this equaltion or type confirm</p>
+          <p className="my-2 mt-4">Please type “<strong>confirm</strong>“ into input field.</p>
           <Input
             className="bg-surface"
             placeholder="Type confirm"
