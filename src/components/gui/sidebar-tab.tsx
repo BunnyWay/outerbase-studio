@@ -1,7 +1,4 @@
-import { useStudioContext } from "@/context/driver-provider";
 import { cn } from "@/lib/utils";
-import { useTheme } from "next-themes";
-import { useSearchParams } from "next/navigation";
 import { ReactElement, useState } from "react";
 
 export interface SidebarTabItem {
@@ -17,19 +14,24 @@ interface SidebarTabProps {
 }
 
 export default function SidebarTab({ tabs }: Readonly<SidebarTabProps>) {
-  const { forcedTheme } = useTheme();
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [loadedIndex, setLoadedIndex] = useState(() => {
+  const [selectedIndex] = useState(0);
+  const [loadedIndex] = useState(() => {
     const a: boolean[] = new Array(tabs.length).fill(false);
     a[0] = true;
     return a;
   });
 
-  const searchParams = useSearchParams();
-  const disableToggle =
-    searchParams.get("disableThemeToggle") === "1" || forcedTheme;
-
-  const config = useStudioContext();
+  // const { forcedTheme } = useTheme();
+  // const [selectedIndex, setSelectedIndex] = useState(0);
+  // const [loadedIndex, setLoadedIndex] = useState(() => {
+  //   const a: boolean[] = new Array(tabs.length).fill(false);
+  //   a[0] = true;
+  //   return a;
+  // });
+  // const searchParams = useSearchParams();
+  // const disableToggle =
+  //   searchParams.get("disableThemeToggle") === "1" || forcedTheme;
+  // const config = useStudioContext();
 
   return (
     <div className={cn("flex h-full bg-neutral-50 dark:bg-neutral-950")}>
