@@ -14,7 +14,7 @@ export default class CloudflareAgentDriver extends CommonAgentDriverImplementati
 
   async query(messages: CommonAgentMessage[]): Promise<string> {
     const response = await fetch(
-      "https://studio-ai-agent.outerbase.workers.dev/chat/complete",
+      "https://studio-ai-agent.b-cdn.net/chat/complete",
       {
         method: "POST",
         headers: {
