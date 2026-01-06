@@ -199,7 +199,7 @@ export default function DatabaseGui() {
   return (
     <div className={cn("flex h-screen w-screen flex-col", containerClassName)}>
       <ResizablePanelGroup direction="horizontal">
-        <ResizablePanel minSize={5} defaultSize={defaultWidthPercentage}>
+        <ResizablePanel minSize={5} style={{ 'minWidth': '150px' }} defaultSize={defaultWidthPercentage}>
           <SidebarTab tabs={sidebarTabs} />
         </ResizablePanel>
         <ResizableHandle withHandle />
