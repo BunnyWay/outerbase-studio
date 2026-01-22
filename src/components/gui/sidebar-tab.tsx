@@ -34,7 +34,7 @@ export default function SidebarTab({ tabs }: Readonly<SidebarTabProps>) {
   // const config = useStudioContext();
 
   return (
-    <div className={cn("flex h-full bg-neutral-50 dark:bg-neutral-950")}>
+    <div className={cn("flex h-full bg-neutral-50 dark-bn-bg-secondary")}>
       {/*
       <div className={cn("shrink-0")}>
         <div className="flex h-full flex-col gap-4 border-r border-neutral-200 p-3 dark:border-neutral-800">
