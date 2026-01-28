@@ -416,7 +416,7 @@ export default function QueryWindow({
           <div className="grow overflow-hidden p-2">
             <SqlEditor
               onPrompt={onPrompt}
-              agents={agentDriver}
+              // agents={agentDriver}
               ref={editorRef}
               dialect={databaseDriver.getFlags().dialect}
               value={code}
