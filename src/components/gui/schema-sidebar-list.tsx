@@ -8,6 +8,7 @@ import { ExportFormat, exportTableData } from "@/lib/export-helper";
 import { Icon, Table } from "@phosphor-icons/react";
 import { LucideCog, LucideDatabase, LucideView } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { toast } from "sonner";
 import { ListView, ListViewItem } from "../listview";
 import { CloudflareIcon } from "../resource-card/icon";
 import SchemaCreateDialog from "./schema-editor/schema-create";
@@ -150,6 +151,7 @@ async function downloadExportTable(
     a.click();
     URL.revokeObjectURL(url);
   } catch (error) {
+    toast.error((error as Error).message ?? `Failed to download exported ${format} file`);
     console.error(`Failed to download exported ${format} file:`, error);
   }
 }
