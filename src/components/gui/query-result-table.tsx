@@ -51,26 +51,26 @@ function Header({
   const colIndex = header.index;
 
   let textClass = "grow line-clamp-1 font-mono font-bold";
-  let thClass = "flex grow items-center px-2 overflow-hidden";
+  let thClass = "flex grow items-center overflow-hidden";
 
   if (internalState.getSelectedColIndex().includes(colIndex)) {
     if (internalState.isFullSelectionCol(colIndex)) {
       textClass =
         "grow line-clamp-1 font-mono font-bold text-black dark:text-white font-bold";
       thClass =
-        "flex grow items-center px-2 overflow-hidden bg-neutral-100 dark:bg-neutral-900";
+        "flex grow items-center overflow-hidden bg-neutral-100 dark:bg-neutral-900";
     } else {
       textClass =
         "grow line-clamp-1 font-mono font-bold dark:text-white font-bold";
       thClass =
-        "flex grow items-center px-2 overflow-hidden bg-neutral-100 dark:bg-neutral-900";
+        "flex grow items-center overflow-hidden bg-neutral-100 dark:bg-neutral-900";
     }
   }
 
   return (
-    <div className={thClass}>
+    <div className={thClass + ' px-2'}>
       <div
-        className={thClass}
+        className={thClass + ' pe-2'}
         onMouseDown={(e) => {
           if (e.button === 2) {
             setOpen(true);
@@ -96,7 +96,7 @@ function Header({
             />
           </div>
         ) : null}
-        <div className={textClass}>{header.display.text}</div>
+        <div className={textClass + ' text-ellipsis'}>{header.display.text}</div>
       </div>
       <div>
         <DropdownMenu modal={false} onOpenChange={setOpen} open={open}>
