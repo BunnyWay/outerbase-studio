@@ -15,7 +15,11 @@ import { unescapeIdentity } from "./sql-helper";
 export class CursorV2 {
   private ptr: number = 0;
 
-  constructor(private tokens: Token[]) {
+  private tokens: Token[];
+
+  constructor(tokens: Token[]) {
+    this.tokens = tokens.filter((t) => t.type !== "COMMENT");
+
     // Trim whitespace tokens from the beginning and end
     while (this.tokens.length > 0 && this.tokens[0].type === "WHITESPACE") {
       this.tokens.shift();
@@ -27,8 +31,6 @@ export class CursorV2 {
     ) {
       this.tokens.pop();
     }
-
-    this.tokens = tokens;
   }
 
   getPointer() {
@@ -563,7 +565,7 @@ export function parseCreateTableScript(
   cursor.expectTokenOptional("TEMPORARY");
   cursor.expectTokenOptional("VIRTUAL");
   cursor.expectToken("TABLE");
-  cursor.expectTokensOptional(["IF", "NOT", "EXIST"]);
+  cursor.expectTokensOptional(["IF", "NOT", "EXISTS"]);
 
   const tableName = cursor.consumeIdentifier();
 
