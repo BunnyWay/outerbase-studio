@@ -256,4 +256,32 @@ describe("parse create table", () => {
       constraints: [],
     } as DatabaseTableSchema);
   });
+
+  test("ignore sql comments inside create table", () => {
+    const sql = `CREATE TABLE IF NOT EXISTS test1 (
+  day TEXT PRIMARY KEY, -- 'yyyy-MM-dd'
+  total_size INTEGER /* bytes, -- not a line comment */
+  -- trailing comment
+)`;
+
+    expect(p(sql)).toEqual({
+      tableName: "test1",
+      schemaName: "main",
+      autoIncrement: false,
+      pk: ["day"],
+      columns: [
+        {
+          name: "day",
+          type: "TEXT",
+          pk: true,
+          constraint: { primaryKey: true, autoIncrement: false },
+        },
+        {
+          name: "total_size",
+          type: "INTEGER",
+        },
+      ],
+      constraints: [],
+    } as DatabaseTableSchema);
+  });
 });
