@@ -54,9 +54,9 @@ export function SchemaDatabaseCreateForm({
   return (
     <div className="relative flex h-full flex-col overflow-hidden">
       {errorMessage && (
-        <div className="flex items-end justify-end gap-4 font-mono text-sm text-red-500">
-          <LucideAlertCircle className="h-12 w-12" />
-          <p>{errorMessage}</p>
+        <div className="flex items-center justify-center gap-2 rounded-md border border-red-200 bg-red-50 p-3 text-center text-sm text-red-600 dark:border-red-900 dark:bg-red-950 dark:text-red-400">
+          <LucideAlertCircle className="h-4 w-4 shrink-0" />
+          <p className="break-words font-mono">{errorMessage}</p>
         </div>
       )}
       <div className="flex shrink-0 grow-0 gap-2 border-neutral-200 px-1 py-4 dark:border-neutral-800">
