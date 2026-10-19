@@ -105,8 +105,8 @@ export function SchemaProvider({ children }: Readonly<PropsWithChildren>) {
           setError(undefined);
           setLoading(false);
         })
-        .catch((e) => {
-          setError(e.message);
+        .catch(() => {
+          setError(undefined);
           setLoading(false);
         });
     },
